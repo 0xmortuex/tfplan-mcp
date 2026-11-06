@@ -1,0 +1,99 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.9.5",
+  "variables": {
+    "db_password": {
+      "value": "PLANTED-hunter2-SECRET-9f3a"
+    }
+  },
+  "planned_values": {
+    "root_module": {}
+  },
+  "resource_changes": [
+    {
+      "address": "aws_db_instance.prod",
+      "mode": "managed",
+      "type": "aws_db_instance",
+      "name": "prod",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "delete"
+        ],
+        "before": {
+          "identifier": "prod",
+          "engine": "postgres",
+          "deletion_protection": false,
+          "password": "PLANTED-hunter2-SECRET-9f3a"
+        },
+        "after": null,
+        "after_unknown": {},
+        "before_sensitive": {
+          "password": true
+        },
+        "after_sensitive": {}
+      },
+      "action_reason": "delete_because_no_resource_config"
+    },
+    {
+      "address": "aws_s3_bucket.data",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "data",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "delete"
+        ],
+        "before": {
+          "bucket": "data"
+        },
+        "after": null,
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_kms_key.main",
+      "mode": "managed",
+      "type": "aws_kms_key",
+      "name": "main",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "delete"
+        ],
+        "before": {
+          "description": "k"
+        },
+        "after": null,
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_security_group.old",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "old",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "delete"
+        ],
+        "before": {
+          "name": "old"
+        },
+        "after": null,
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "configuration": {
+    "root_module": {}
+  }
+}

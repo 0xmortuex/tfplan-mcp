@@ -1,0 +1,16 @@
+{
+  "format_version": "1.1",
+  "terraform_version": "1.5.7",
+  "variables": {
+    "db_password": {
+      "value": "PLANTED-hunter2-SECRET-9f3a"
+    }
+  },
+  "planned_values": {
+    "root_module": {}
+  },
+  "resource_changes": [],
+  "configuration": {
+    "root_module": {}
+  }
+}

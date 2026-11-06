@@ -1,0 +1,79 @@
+{
+  "format_version": "1.1",
+  "terraform_version": "1.6.0",
+  "variables": {
+    "db_password": {
+      "value": "PLANTED-hunter2-SECRET-9f3a"
+    }
+  },
+  "planned_values": {
+    "root_module": {}
+  },
+  "resource_changes": [
+    {
+      "address": "aws_instance.web",
+      "mode": "managed",
+      "type": "aws_instance",
+      "name": "web",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "ami": "ami-1",
+          "instance_type": "t3.micro",
+          "tags": {
+            "Name": "web"
+          }
+        },
+        "after": {
+          "ami": "ami-1",
+          "instance_type": "t3.small",
+          "tags": {
+            "Name": "web"
+          }
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_s3_bucket.logs",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "logs",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "bucket": "logs",
+          "tags": {
+            "env": "dev"
+          },
+          "tags_all": {
+            "env": "dev"
+          }
+        },
+        "after": {
+          "bucket": "logs",
+          "tags": {
+            "env": "prod"
+          },
+          "tags_all": {
+            "env": "prod"
+          }
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "configuration": {
+    "root_module": {}
+  }
+}

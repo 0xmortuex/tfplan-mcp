@@ -1,0 +1,120 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.9.5",
+  "variables": {
+    "db_password": {
+      "value": "PLANTED-hunter2-SECRET-9f3a"
+    }
+  },
+  "planned_values": {
+    "root_module": {}
+  },
+  "resource_changes": [
+    {
+      "address": "aws_instance.n[0]",
+      "mode": "managed",
+      "type": "aws_instance",
+      "name": "n",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "index": 0,
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "ami": "a"
+        },
+        "after_unknown": {},
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_instance.n[1]",
+      "mode": "managed",
+      "type": "aws_instance",
+      "name": "n",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "index": 1,
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "ami": "a"
+        },
+        "after_unknown": {},
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_s3_bucket.b[\"my \\\"quoted\\\" key\"]",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "b",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "index": "my \"quoted\" key",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "bucket": "q"
+        },
+        "after_unknown": {},
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_s3_bucket.b[\"café-日本\"]",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "b",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "index": "café-日本",
+      "change": {
+        "actions": [
+          "delete"
+        ],
+        "before": {
+          "bucket": "u"
+        },
+        "after": null,
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      },
+      "action_reason": "delete_because_each_key"
+    },
+    {
+      "address": "aws_s3_bucket.b[\"a.b[c]\"]",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "b",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "index": "a.b[c]",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "force_destroy": false
+        },
+        "after": {
+          "force_destroy": true
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "configuration": {
+    "root_module": {}
+  }
+}

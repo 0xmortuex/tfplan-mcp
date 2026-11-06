@@ -1,0 +1,103 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.7.2",
+  "variables": {
+    "db_password": {
+      "value": "PLANTED-hunter2-SECRET-9f3a"
+    }
+  },
+  "planned_values": {
+    "root_module": {}
+  },
+  "resource_changes": [
+    {
+      "address": "aws_instance.same",
+      "mode": "managed",
+      "type": "aws_instance",
+      "name": "same",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "no-op"
+        ],
+        "before": {
+          "ami": "a"
+        },
+        "after": {
+          "ami": "a"
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_instance.new_name",
+      "mode": "managed",
+      "type": "aws_instance",
+      "name": "new_name",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "previous_address": "aws_instance.old_name",
+      "change": {
+        "actions": [
+          "no-op"
+        ],
+        "before": {
+          "ami": "a"
+        },
+        "after": {
+          "ami": "a"
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_s3_bucket.adopted",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "adopted",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "no-op"
+        ],
+        "before": {
+          "bucket": "adopted"
+        },
+        "after": {
+          "bucket": "adopted"
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {},
+        "importing": {
+          "id": "adopted"
+        }
+      }
+    },
+    {
+      "address": "aws_s3_bucket.forgotten",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "forgotten",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "forget"
+        ],
+        "before": {
+          "bucket": "f"
+        },
+        "after": null,
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "configuration": {
+    "root_module": {}
+  }
+}

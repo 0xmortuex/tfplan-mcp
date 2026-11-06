@@ -1,0 +1,73 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.9.5",
+  "variables": {
+    "db_password": {
+      "value": "PLANTED-hunter2-SECRET-9f3a"
+    }
+  },
+  "planned_values": {
+    "root_module": {}
+  },
+  "resource_changes": [
+    {
+      "address": "aws_instance.web",
+      "mode": "managed",
+      "type": "aws_instance",
+      "name": "web",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "ami": "a"
+        },
+        "after_unknown": {},
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "configuration": {
+    "root_module": {}
+  },
+  "errored": true,
+  "applyable": false,
+  "complete": false,
+  "deferred_changes": [
+    {
+      "reason": "instance_count_unknown",
+      "resource_change": {
+        "address": "aws_instance.later[0]",
+        "mode": "managed",
+        "type": "aws_instance",
+        "name": "later",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "change": {
+          "actions": [
+            "create"
+          ],
+          "before": null,
+          "after": {
+            "ami": "a"
+          },
+          "after_unknown": {},
+          "before_sensitive": false,
+          "after_sensitive": {}
+        }
+      }
+    }
+  ],
+  "checks": [
+    {
+      "address": {
+        "kind": "check",
+        "name": "health"
+      },
+      "status": "fail",
+      "instances": []
+    }
+  ]
+}

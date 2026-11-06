@@ -1,0 +1,200 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.9.5",
+  "variables": {
+    "db_password": {
+      "value": "PLANTED-hunter2-SECRET-9f3a"
+    }
+  },
+  "planned_values": {
+    "root_module": {}
+  },
+  "resource_changes": [
+    {
+      "address": "aws_security_group.web",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "web",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "name": "web",
+          "ingress": [
+            {
+              "from_port": 443,
+              "to_port": 443,
+              "protocol": "tcp",
+              "cidr_blocks": [
+                "0.0.0.0/0"
+              ],
+              "ipv6_cidr_blocks": []
+            }
+          ],
+          "egress": [
+            {
+              "from_port": 0,
+              "to_port": 0,
+              "protocol": "-1",
+              "cidr_blocks": [
+                "0.0.0.0/0"
+              ]
+            }
+          ]
+        },
+        "after": {
+          "name": "web",
+          "ingress": [
+            {
+              "from_port": 443,
+              "to_port": 443,
+              "protocol": "tcp",
+              "cidr_blocks": [
+                "0.0.0.0/0"
+              ],
+              "ipv6_cidr_blocks": []
+            },
+            {
+              "from_port": 22,
+              "to_port": 22,
+              "protocol": "tcp",
+              "cidr_blocks": [
+                "0.0.0.0/0"
+              ],
+              "ipv6_cidr_blocks": []
+            },
+            {
+              "from_port": 5432,
+              "to_port": 5432,
+              "protocol": "tcp",
+              "cidr_blocks": [],
+              "ipv6_cidr_blocks": [
+                "::/0"
+              ]
+            }
+          ],
+          "egress": [
+            {
+              "from_port": 0,
+              "to_port": 0,
+              "protocol": "-1",
+              "cidr_blocks": [
+                "0.0.0.0/0"
+              ]
+            }
+          ]
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_security_group_rule.all",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "all",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "type": "ingress",
+          "from_port": 0,
+          "to_port": 65535,
+          "protocol": "tcp",
+          "cidr_blocks": [
+            "0.0.0.0/0"
+          ]
+        },
+        "after_unknown": {},
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_security_group_rule.out",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "out",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "type": "egress",
+          "from_port": 0,
+          "to_port": 0,
+          "protocol": "-1",
+          "cidr_blocks": [
+            "0.0.0.0/0"
+          ]
+        },
+        "after_unknown": {},
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "google_compute_firewall.rdp",
+      "mode": "managed",
+      "type": "google_compute_firewall",
+      "name": "rdp",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "direction": "INGRESS",
+          "source_ranges": [
+            "0.0.0.0/0"
+          ],
+          "allow": [
+            {
+              "protocol": "tcp",
+              "ports": [
+                "3389"
+              ]
+            }
+          ]
+        },
+        "after_unknown": {},
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "azurerm_network_security_rule.ssh",
+      "mode": "managed",
+      "type": "azurerm_network_security_rule",
+      "name": "ssh",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "direction": "Inbound",
+          "access": "Allow",
+          "source_address_prefix": "*",
+          "destination_port_range": "22"
+        },
+        "after_unknown": {},
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "configuration": {
+    "root_module": {}
+  }
+}

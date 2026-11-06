@@ -1,0 +1,142 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.9.5",
+  "variables": {
+    "db_password": {
+      "value": "PLANTED-hunter2-SECRET-9f3a"
+    }
+  },
+  "planned_values": {
+    "root_module": {}
+  },
+  "resource_changes": [
+    {
+      "address": "aws_db_instance.main",
+      "mode": "managed",
+      "type": "aws_db_instance",
+      "name": "main",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "delete",
+          "create"
+        ],
+        "before": {
+          "engine": "postgres",
+          "identifier": "main",
+          "allocated_storage": 20
+        },
+        "after": {
+          "engine": "mysql",
+          "identifier": "main",
+          "allocated_storage": 20
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {},
+        "replace_paths": [
+          [
+            "engine"
+          ]
+        ]
+      },
+      "action_reason": "replace_because_cannot_update"
+    },
+    {
+      "address": "aws_instance.app",
+      "mode": "managed",
+      "type": "aws_instance",
+      "name": "app",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create",
+          "delete"
+        ],
+        "before": {
+          "ami": "ami-1",
+          "subnet_id": "subnet-1"
+        },
+        "after": {
+          "ami": "ami-2",
+          "subnet_id": "subnet-1"
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {},
+        "replace_paths": [
+          [
+            "ami"
+          ]
+        ]
+      },
+      "action_reason": "replace_because_cannot_update"
+    },
+    {
+      "address": "aws_route53_record.db",
+      "mode": "managed",
+      "type": "aws_route53_record",
+      "name": "db",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "records": [
+            "old.example.com"
+          ]
+        },
+        "after": {
+          "records": []
+        },
+        "after_unknown": {
+          "records": true
+        },
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "configuration": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "aws_db_instance.main",
+          "mode": "managed",
+          "type": "aws_db_instance",
+          "name": "main",
+          "expressions": {
+            "engine": {
+              "constant_value": "mysql"
+            }
+          }
+        },
+        {
+          "address": "aws_route53_record.db",
+          "mode": "managed",
+          "type": "aws_route53_record",
+          "name": "db",
+          "expressions": {
+            "records": {
+              "references": [
+                "aws_db_instance.main.address",
+                "aws_db_instance.main"
+              ]
+            }
+          }
+        }
+      ],
+      "outputs": {
+        "db_host": {
+          "expression": {
+            "references": [
+              "aws_db_instance.main.address",
+              "aws_db_instance.main"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

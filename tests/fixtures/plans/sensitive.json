@@ -1,0 +1,119 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.9.5",
+  "variables": {
+    "db_password": {
+      "value": "PLANTED-hunter2-SECRET-9f3a"
+    }
+  },
+  "planned_values": {
+    "root_module": {}
+  },
+  "resource_changes": [
+    {
+      "address": "aws_db_instance.main",
+      "mode": "managed",
+      "type": "aws_db_instance",
+      "name": "main",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "identifier": "main",
+          "password": "PLANTED-hunter2-SECRET-9f3a-OLD",
+          "master_token": "PLANTED-hunter2-SECRET-9f3a-TOK",
+          "settings": {
+            "credentials": {
+              "value": "PLANTED-hunter2-SECRET-9f3a-NESTED"
+            },
+            "size": 1
+          },
+          "tags": {
+            "secret_key": "PLANTED-hunter2-SECRET-9f3a-TAG",
+            "Name": "m"
+          }
+        },
+        "after": {
+          "identifier": "main",
+          "password": "PLANTED-hunter2-SECRET-9f3a-NEW",
+          "master_token": "PLANTED-hunter2-SECRET-9f3a-TOK2",
+          "settings": {
+            "credentials": {
+              "value": "PLANTED-hunter2-SECRET-9f3a-NESTED2"
+            },
+            "size": 2
+          },
+          "tags": {
+            "secret_key": "PLANTED-hunter2-SECRET-9f3a-TAG2",
+            "Name": "m"
+          },
+          "user_data": "postgres://admin:PLANTED-hunter2-SECRET-9f3a-URL@db.internal/app",
+          "note": "PLANTED-hunter2-SECRET-9f3a-FLAGGED-ONLY-BY-MASK"
+        },
+        "after_unknown": {},
+        "before_sensitive": {
+          "password": true,
+          "settings": {
+            "credentials": true
+          }
+        },
+        "after_sensitive": {
+          "password": true,
+          "settings": {
+            "credentials": true
+          },
+          "note": true
+        }
+      }
+    },
+    {
+      "address": "aws_secretsmanager_secret_version.s",
+      "mode": "managed",
+      "type": "aws_secretsmanager_secret_version",
+      "name": "s",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "secret_string": "PLANTED-hunter2-SECRET-9f3a-SV",
+          "secret_id": "s"
+        },
+        "after_unknown": {},
+        "before_sensitive": false,
+        "after_sensitive": {
+          "secret_string": true
+        }
+      }
+    }
+  ],
+  "configuration": {
+    "root_module": {}
+  },
+  "output_changes": {
+    "db_password": {
+      "actions": [
+        "update"
+      ],
+      "before": "PLANTED-hunter2-SECRET-9f3a-O1",
+      "after": "PLANTED-hunter2-SECRET-9f3a-O2",
+      "after_unknown": false,
+      "before_sensitive": true,
+      "after_sensitive": true
+    },
+    "api_token": {
+      "actions": [
+        "create"
+      ],
+      "before": null,
+      "after": "PLANTED-hunter2-SECRET-9f3a-O3",
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    }
+  }
+}

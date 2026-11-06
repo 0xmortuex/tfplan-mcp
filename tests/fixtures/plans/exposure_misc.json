@@ -1,0 +1,69 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.9.5",
+  "variables": {
+    "db_password": {
+      "value": "PLANTED-hunter2-SECRET-9f3a"
+    }
+  },
+  "planned_values": {
+    "root_module": {}
+  },
+  "resource_changes": [
+    {
+      "address": "aws_s3_bucket_public_access_block.b",
+      "mode": "managed",
+      "type": "aws_s3_bucket_public_access_block",
+      "name": "b",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "block_public_acls": true,
+          "block_public_policy": true
+        },
+        "after": {
+          "block_public_acls": false,
+          "block_public_policy": true
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_db_instance.pub",
+      "mode": "managed",
+      "type": "aws_db_instance",
+      "name": "pub",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "publicly_accessible": false,
+          "storage_encrypted": true,
+          "deletion_protection": true,
+          "backup_retention_period": 14,
+          "kms_key_id": "key-1"
+        },
+        "after": {
+          "publicly_accessible": true,
+          "storage_encrypted": false,
+          "deletion_protection": false,
+          "backup_retention_period": 1,
+          "kms_key_id": "key-2"
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "configuration": {
+    "root_module": {}
+  }
+}
